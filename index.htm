@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planorama - Advanced Task Manager</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Planorama" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header with stats -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <h1>
+                    <img src="PlanoramaLogo.png" alt="S" style="height: 4rem; transform: translateY(15px);">lanorama
+                </h1>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    <span class="stat-label">Done</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="pendingTasks">0</span>
+                    <span class="stat-label">Pending</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Task input section -->
+        <div class="input-section">
+            <div class="input-container">
+                <div class="input-group">
+                    <i class="fas fa-edit input-icon"></i>
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" maxlength="100">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-calendar-alt input-icon"></i>
+                    <input type="date" id="deadlineInput">
+                </div>
+                <div class="input-group priority-group">
+                    <i class="fas fa-flag input-icon"></i>
+                    <select id="prioritySelect">
+                        <option value="auto">Auto Priority</option>
+                        <option value="high">High Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                </div>
+                <button id="addButton" class="add-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Task</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter and search controls -->
+        <div class="controls">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> All
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <i class="fas fa-clock"></i> Pending
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check"></i> Completed
+                </button>
+            </div>
+            <button id="clearCompleted" class="clear-btn">
+                <i class="fas fa-trash"></i>
+                Clear Completed
+            </button>
+        </div>
+
+        <!-- Task lists -->
+        <div class="todo-sections">
+            <div class="priority-section high-priority-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>High Priority</h2>
+                        <span class="task-count" id="highPriorityCount">0</span>
+                    </div>
+                    <div class="section-actions">
+                        <button class="collapse-btn" data-section="high">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="task-container" id="highPriorityContainer"></div>
+            </div>
+
+            <div class="priority-section low-priority-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-clock"></i>
+                        <h2>Low Priority</h2>
+                        <span class="task-count" id="lowPriorityCount">0</span>
+                    </div>
+                    <div class="section-actions">
+                        <button class="collapse-btn" data-section="low">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="task-container" id="lowPriorityContainer"></div>
+            </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-section">
+            <div class="progress-label">
+                <span>Overall Progress</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+
+    <script src="./script.js"></script>
+    <div class="developer-credit">
+        <a href="https://eccentriccoder01.github.io/Me" target="_blank" class="explorer-signature" title="Visit My World">
+            Developed by <span class="eccentric">Eccentric Explorer</span>
+        </a>
+    </div>
+</body>
+</html>
