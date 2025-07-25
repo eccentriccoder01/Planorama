@@ -80,18 +80,16 @@ For a detailed walkthrough of Planorama's features and how to use them, check ou
     ```
 
 3.  **Open with a Live Server:**
-    Planorama requires a live server environment to function correctly, especially for the camera scanning and certain sharing features (due to browser security policies).
-
-      * **VS Code Extension:** If you use VS Code, you can install the "Live Server" extension by Ritwick Dey. Right-click on `index.html` and select "Open with Live Server".
-      * **Other options:** You can also use `http-server` (Node.js package) or any other local server software.
-
-    ```bash
-    # If you have Node.js installed, you can install http-server globally:
-    npm install -g http-server
-    # Then navigate to your project directory and run:
-    http-server
-    ```
-
+    You can simply open `index.html` directly in your browser, or for a better development experience (especially for features like API calls), use a local server:
+      * If you have VS Code, use the "Live Server" extension.
+      * Alternatively, if you have Node.js installed, you can install `http-server` globally:
+        ```bash
+        npm install -g http-server
+        ```
+        Then navigate to your project directory and run:
+        ```bash
+        http-server
+        ```
     Your default browser will open the application, usually at `http://127.0.0.1:5500` or `http://localhost:8080`.
 
 ## Issue Creation ✴

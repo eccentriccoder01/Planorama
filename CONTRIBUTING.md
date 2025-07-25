@@ -59,14 +59,14 @@
    git fetch upstream
 ```
 
-**12.** Make sure that you're on your master branch.
+**12.** Make sure that you're on your main branch.
 ```
-   git checkout master
+   git checkout main
 ```
 
 **13.** Now that we have fetched the upstream repository, we want to merge its changes into our local branch. This will bring that branch into sync with the upstream, without losing our local changes.
 ```
-   git merge upstream/master
+   git merge upstream/main
 ```
 
 Here are a few things you can do that will increase the likelihood of your pull request being accepted:
